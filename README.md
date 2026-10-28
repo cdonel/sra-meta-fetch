@@ -10,12 +10,11 @@ Required dependencies to run:
 
 
 Test:
-<span style="font-family: Courier; background-color: #f0f0f0; padding: 2px 4px; border-radius: 4px;">snakemake --cores 4 --use-conda --configfile "test/config.yaml"</span>
-
+`snakemake --cores 4 --use-conda --configfile "test/config.yaml"`
 
 
 Run with user provided meta.csv:
-<span style="font-family: Courier; background-color: #f0f0f0; padding: 2px 4px; border-radius: 4px;">snakemake --cores 4 --use-conda --config META="your/path/meta.csv"</span>
+`snakemake --cores 4 --use-conda --config META="your/path/meta.csv"`
 
 
 <table>
