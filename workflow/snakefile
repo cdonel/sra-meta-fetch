@@ -1,0 +1,37 @@
+import pandas as pd
+
+# Snakefile for the SRA meta-fetch workflow.
+# Test: snakemake --cores 4 --use-conda --configfile "test/config.yaml"
+# User: snakemake --cores 4 --use-conda --config META="yourpath/meta.csv"
+
+# Default, overridable from the command line
+configfile: "config/config.yaml"   # optional, holds defaults
+META = config.get("META", "meta.csv")
+OUTDIR = config.get("OUTDIR", "../results")
+
+
+# Read in meta.csv containing information on SRA runs.
+# Set up lists of runs, biosamples, and genotypes for use in the workflow.
+meta = pd.read_csv(META)
+runs = meta['Run']  # Example: SRR1234567
+biosamples = meta['BioSample']  # Example: SAMN12345678
+genotypes = meta['genotype']    # Example: WT, KO, etc.
+
+
+# Set up a list of target files for the workflow.
+targets = [
+    f"{OUTDIR}/{g}/{b}/{r}/{r}_{n}.fastq"
+    for g, b, r in zip(genotypes, biosamples, runs)
+    for n in (1, 2, 3)
+]
+
+
+# Include rules for prefetching and fasterq-dump.
+include: "rules/prefetch.smk"
+include: "rules/fasterqdump.smk"
+
+
+# Rule for setting workflow targets. The workflow will run until all of these files are created.
+rule all:
+    input:
+        targets
