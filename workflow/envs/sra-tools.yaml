@@ -1,0 +1,11 @@
+# workflow/envs/sra.yaml
+name: sra-meta-fetch
+
+channels:
+  - conda-forge
+  - bioconda
+
+dependencies:
+  - sra-tools
+  - snakemake
+  - pandas

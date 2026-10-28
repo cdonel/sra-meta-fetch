@@ -1,0 +1,3 @@
+# test/config.yaml
+META: "test/meta.csv"
+OUTDIR: "test/results"
