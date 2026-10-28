@@ -21,7 +21,7 @@ Run with user provided meta.csv:
 
 <table>
   <tr>
-    <td align="center"><img src="test/docs/dag.svg" width="400"><br><em>Figure 1. Directed acyclic graph (DAG)</em></td>
-    <td align="center"><img src="test/docs/filegraph.svg" width="400"><br><em>Figure 2. DAG displaying I/O files</em></td>
+    <td align="center"><img src="test/docs/dag.svg" width="400"><br><em>Figure 1. Test directed acyclic graph (DAG)</em></td>
+    <td align="center"><img src="test/docs/filegraph.svg" width="400"><br><em>Figure 2. Test DAG and output files</em></td>
   </tr>
 </table>
