@@ -10,10 +10,12 @@ Required dependencies to run:
 
 
 Test:
+
 `snakemake --cores 4 --use-conda --configfile "test/config.yaml"`
 
 
 Run with user provided meta.csv:
+
 `snakemake --cores 4 --use-conda --config META="your/path/meta.csv"`
 
 
