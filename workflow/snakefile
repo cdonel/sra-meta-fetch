@@ -20,7 +20,7 @@ genotypes = meta['genotype']    # Example: WT, KO, etc.
 
 # Set up a list of target files for the workflow.
 targets = [
-    f"{OUTDIR}/{g}/{b}/{r}/{r}_{n}.fastq"
+    f"{OUTDIR}/{g}/{b}/{r}/{r}_{n}.fastq.gz"
     for g, b, r in zip(genotypes, biosamples, runs)
     for n in (1, 2, 3)
 ]
@@ -29,6 +29,7 @@ targets = [
 # Include rules for prefetching and fasterq-dump.
 include: "rules/prefetch.smk"
 include: "rules/fasterqdump.smk"
+include: "rules/compress_fastq.smk"
 
 
 # Rule for setting workflow targets. The workflow will run until all of these files are created.
