@@ -4,9 +4,9 @@ rule fasterqdump:
     input:
         OUTDIR + "/{genotypes}/{biosamples}/{runs}/{runs}.sra"
     output:
-        OUTDIR + "/{genotypes}/{biosamples}/{runs}/{runs}_1.fastq",
-        OUTDIR + "/{genotypes}/{biosamples}/{runs}/{runs}_2.fastq",
-        OUTDIR + "/{genotypes}/{biosamples}/{runs}/{runs}_3.fastq"
+        temp(OUTDIR + "/{genotypes}/{biosamples}/{runs}/{runs}_1.fastq"),
+        temp(OUTDIR + "/{genotypes}/{biosamples}/{runs}/{runs}_2.fastq"),
+        temp(OUTDIR + "/{genotypes}/{biosamples}/{runs}/{runs}_3.fastq")
     params:
         outdir=OUTDIR + "/{genotypes}/{biosamples}/{runs}"
     conda:
