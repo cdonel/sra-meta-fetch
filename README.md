@@ -18,10 +18,11 @@ Run with user provided meta.csv:
 
 `snakemake --cores 4 --use-conda --config META="your/path/meta.csv"`
 
+# **Workflow**
+## **Figure 1. DAG using test data**
+![Figure 1. DAG using test data](test/docs/dag.svg)
 
-<table>
-  <tr>
-    <td align="center"><img src="test/docs/dag.svg" width="400"><br><em>Figure 1. Test directed acyclic graph (DAG)</em></td>
-    <td align="center"><img src="test/docs/filegraph.svg" width="400"><br><em>Figure 2. Test DAG and input/output files</em></td>
-  </tr>
-</table>
+
+# **Workflow**
+## **Figure 2. File graph using test data**
+![Figure 2. File graph using test data](test/docs/filegraph.svg)
