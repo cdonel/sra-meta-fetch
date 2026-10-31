@@ -23,6 +23,5 @@ Run with user provided meta.csv:
 ![Figure 1. DAG using test data](test/docs/dag.svg)
 
 
-# **Workflow**
 ## **Figure 2. File graph using test data**
 ![Figure 2. File graph using test data](test/docs/filegraph.svg)
